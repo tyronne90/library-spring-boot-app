@@ -22,7 +22,17 @@ public class BookServiceImpl implements BookService{
 	}
 	
 	@Override
-	public Book geBookById(String id){
+	public Book getBookById(String id){
 		return bookRepository.findBookById(id);
+	}
+
+	public Book deleteBookById(String id) {
+		 bookRepository.deleteById(id);
+		 return null;
+	}
+
+	@Override
+	public void updateBook(Book book) {
+		bookRepository.save(book);		
 	}
 }
