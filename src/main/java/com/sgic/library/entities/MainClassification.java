@@ -13,11 +13,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(schema = "library", name="mainclassification")
 public class MainClassification implements Serializable {
 
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long mainClassId;
@@ -30,6 +30,7 @@ public class MainClassification implements Serializable {
 	public List<SubClassification> getSubClassification() {
 		return subClassification;
 	}
+	
 	public void setSubClassification(List<SubClassification> subClassification) {
 		this.subClassification = subClassification;
 	}
@@ -37,12 +38,15 @@ public class MainClassification implements Serializable {
 	public Long getMainClassId() {
 		return mainClassId;
 	}
+	
 	public void setMainClassId(Long mainClassId) {
 		this.mainClassId = mainClassId;
 	}
+	
 	public String getMainClassName() {
 		return mainClassName;
 	}
+	
 	public void setMainCLassName(String mainCLassName) {
 		this.mainClassName = mainCLassName;
 	}

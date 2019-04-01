@@ -27,4 +27,26 @@ public class SubClassificationImpl implements SubClassificationService {
 		return subClassificationRepository.findAll();
 	}
 
+	@Override
+	public SubClassification getSubClassificationById(String subClassId) {
+		return subClassificationRepository.findSubClassificationBySubClassId(subClassId);
+	}
+
+	@Override
+	public List<SubClassification>  getSubClassificationByMainClassId(Long mainClassId) {
+		return subClassificationRepository.findSubClassificationByMainClassificationMainClassId(mainClassId);
+	}
+
+	@Override
+	public Object[] getSubClassName() {
+		 Object[] subName = subClassificationRepository.findSubClassName();
+		 return subName;
+	}
+
+	@Override
+	public Object[] getSubClassNameByMainClassId(Long mainClassId) {
+		Object[] getSubName = subClassificationRepository.fetchSubClassNameByMainClassId(mainClassId);
+		return getSubName;
+	}
+
 }

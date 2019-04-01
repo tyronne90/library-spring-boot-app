@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 //import com.fasterxml.jackson.annotation.JsonBackReference;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(schema = "library", name = "subclassification")
 public class SubClassification implements Serializable {
 
-	private static final long serialVersionUID = 1L;
 	@Id
 	private String subClassId;
 	private String subClassName;
