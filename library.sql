@@ -2,9 +2,4 @@ CREATE DATABASE IF NOT EXISTS library;
 
 USE library;
 
-CREATE TABLE IF NOT EXISTS book(
-	id VARCHAR(10) NULL,
-    book_name VARCHAR(10) NULL
-);
 
-SELECT * FROM book;
