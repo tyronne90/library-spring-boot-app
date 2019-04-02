@@ -34,7 +34,7 @@ public class BookController {
 		return bookService.getAllBook();
 	}
 	
-	@GetMapping("/geBookById/{id}")
+	@GetMapping("/getBookById/{id}")
 	public ResponseEntity<Book> getBookById(@PathVariable("id") String id){
 		return new ResponseEntity<Book>(bookService.getBookById(id), HttpStatus.OK);
 	}
