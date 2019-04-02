@@ -49,4 +49,16 @@ public class SubClassificationImpl implements SubClassificationService {
 		return getSubName;
 	}
 
+	@Override
+	public void updateSubClassification(SubClassification subClass) {
+		subClassificationRepository.save(subClass);
+		System.out.print("Updated");
+	}
+
+	@Override
+	public SubClassification deleteSubClassById(String subClassId) {
+		subClassificationRepository.deleteById(subClassId);
+		return null;
+	}
+
 }
