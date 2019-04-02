@@ -51,4 +51,20 @@ public class BookController {
 		return new ResponseEntity<Book>(book, HttpStatus.ACCEPTED);
 	}
 	
+	@GetMapping("/getBookByMainClassId/{mainClassId}")
+	public List<Book> getBookByMainClassId(@PathVariable("mainClassId") Long mainClassId){
+		return bookService.getBookByMainClassId(mainClassId);
+	}
+	
+	@GetMapping("/getBookBySubClassId/{subClassId}")
+	public List<Book> getBookBySubClassId(@PathVariable("subClassId") String subClassId){
+		return bookService.getBookBySubClassId(subClassId);
+	}
+	
+	@GetMapping("/getBookByBookName/{bookName}")
+	public List<Book> getBookByBookName(@PathVariable("bookName") String bookName){
+		return bookService.getBookByBookName(bookName);
+	}
+	
+	
 }

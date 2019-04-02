@@ -10,4 +10,7 @@ public interface BookService {
 	Book getBookById(String id);	//	Get Book By ID
 	Book deleteBookById(String id);	//	Delete Book
 	void updateBook(Book book);		//	Update Book
+	List<Book> getBookByMainClassId(Long mainClassId);
+	List<Book> getBookBySubClassId(String subClassId);
+	List<Book> getBookByBookName(String bookName);
 }

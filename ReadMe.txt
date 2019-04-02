@@ -13,8 +13,8 @@ spring.datasource.url = jdbc:mysql://localhost:<PORT>/library?useSSL=false
 Initialize with create -> 
 	spring.jpa.hibernate.ddl-auto = create
 
-after that change it to update ->
-	spring.jpa.hibernate.ddl-auto = update
+after that change it to update or none ->
+	spring.jpa.hibernate.ddl-auto = none
 --------------------------------------------------------------------------------------
 
 04. Change MySQL username & password

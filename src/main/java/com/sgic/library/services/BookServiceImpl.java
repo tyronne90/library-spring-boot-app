@@ -40,4 +40,21 @@ public class BookServiceImpl implements BookService{
 		}
 		
 	}
+
+	@Override
+	public List<Book> getBookByMainClassId(Long mainClassId) {
+		return bookRepository.findBookByMainClassificationMainClassId(mainClassId);
+	}
+	
+	@Override
+	public List<Book> getBookBySubClassId(String subClassId) {
+		return bookRepository.findBookBySubClassificationSubClassId(subClassId);
+	}
+	
+	@Override
+	public List<Book> getBookByBookName(String bookName) {
+		return bookRepository.findBookByBookName(bookName);
+	}
+	
+	
 }
