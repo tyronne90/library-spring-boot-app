@@ -22,3 +22,74 @@ after that change it to update ->
 spring.datasource.username = <USERNAME>
 spring.datasource.password = <PASSWORD>
 ---------------------------------------
+
+
+
+---------------------------------------------------
+Save MainClassification / Update MainClassification
+---------------------------------------------------
+
+{
+    
+	"mainClassName": "Story"
+
+}
+
+
+-------------------------------------------------
+Save SubClassification / Update SubClassification
+-------------------------------------------------
+
+{
+    
+	"subClassId": "S04",
+    
+	"subClassName": "SubClassName4",
+    
+	"mainClassification": {
+        
+		"mainClassId": "2"
+    
+	}
+
+}
+
+
+
+
+----------------------------------
+Save Book / Update Book
+----------------------------------
+
+{
+	
+	"id":"B1",
+	
+	"bookName": "Hobbit",
+	
+	"mainClassification": {
+		
+		"mainClassId":1
+	
+	},
+	
+	"subClassification": {
+		
+		"subClassId":"S01"
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
