@@ -51,8 +51,11 @@ public class SubClassificationImpl implements SubClassificationService {
 
 	@Override
 	public void updateSubClassification(SubClassification subClass) {
+		String subClassId = subClass.getSubClassId();
+		boolean isExist = subClassificationRepository.findSubClassificationBySubClassId(subClassId) != null;
+		if(isExist) {
 		subClassificationRepository.save(subClass);
-		System.out.print("Updated");
+		}
 	}
 
 	@Override
