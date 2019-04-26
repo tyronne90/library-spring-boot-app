@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,15 +24,24 @@ public class MainClassificationController {
 	@Autowired
 	MainClassificationService mainClassService;
 	
+	  @CrossOrigin(origins = "http://localhost:3001")
 	@PostMapping("/saveMainClass")
 	public HttpStatus saveMainClass(@Valid @RequestBody MainClassification mainClass) {
 		mainClassService.saveMainClassification(mainClass);;
 		return HttpStatus.CREATED;
 	}
-	@GetMapping("/getAllMainClass")
-	public List<MainClassification> getAllMainClass() {
-		return mainClassService.getAllMainClass();
-	}
+	  @CrossOrigin(origins = "http://localhost:3001")
+	  @GetMapping("/getAllMainClass")
+		public List<MainClassification> getAllMainClass() {
+			return mainClassService.getAllMainClass();
+		}
+	  @CrossOrigin(origins = "http://localhost:3001")
+	  @GetMapping("/getAllMainClassId")
+		public Object[] getAllMainClassId(){
+			 Object[] mainName = mainClassService.getAllMainClassId();
+			 return mainName;
+		}
+		  
 	@GetMapping("/getMainClassById/{mainClassId}")
 	public ResponseEntity<MainClassification> getMainClassificationById(@PathVariable("mainClassId") Long mainClassId){
 		return new ResponseEntity<MainClassification>(mainClassService.getMainClassificationById(mainClassId), HttpStatus.OK);

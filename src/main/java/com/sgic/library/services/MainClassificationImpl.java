@@ -23,6 +23,10 @@ public class MainClassificationImpl implements MainClassificationService {
 		return mainClassRepository.findAll();
 	}
 	@Override
+	public Object[] getAllMainClassId() {
+		return mainClassRepository.findMainClassId();
+	}
+	@Override
 	public MainClassification getMainClassificationById(Long mainClassId) {
 		return mainClassRepository.findMainClassificationByMainClassId(mainClassId);
 	}
@@ -40,5 +44,6 @@ public class MainClassificationImpl implements MainClassificationService {
 		 mainClassRepository.deleteById(mainClassId);
 		 return null;
 	}
+	
 
 }
