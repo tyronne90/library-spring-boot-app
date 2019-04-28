@@ -19,23 +19,24 @@ import com.sgic.library.entities.MainClassification;
 import com.sgic.library.services.MainClassificationService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:300")
 public class MainClassificationController {
 
 	@Autowired
 	MainClassificationService mainClassService;
 	
-	  @CrossOrigin(origins = "http://localhost:3001")
+	  //@CrossOrigin(origins = "http://localhost:300")
 	@PostMapping("/saveMainClass")
 	public HttpStatus saveMainClass(@Valid @RequestBody MainClassification mainClass) {
 		mainClassService.saveMainClassification(mainClass);;
 		return HttpStatus.CREATED;
 	}
-	  @CrossOrigin(origins = "http://localhost:3001")
+	  //@CrossOrigin(origins = "http://localhost:3000")
 	  @GetMapping("/getAllMainClass")
 		public List<MainClassification> getAllMainClass() {
 			return mainClassService.getAllMainClass();
 		}
-	  @CrossOrigin(origins = "http://localhost:3001")
+	  //@CrossOrigin(origins = "http://localhost:3000")
 	  @GetMapping("/getAllMainClassId")
 		public Object[] getAllMainClassId(){
 			 Object[] mainName = mainClassService.getAllMainClassId();
