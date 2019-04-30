@@ -35,6 +35,10 @@ public class SubClassificationController {
 	public List<SubClassification> getAllSubClass() {
 		return subClassService.getAllSubClass();
 	}
+//	@GetMapping("/getAllSubClassTable")
+//	public List<SubClassification> getAllSubClassTable() {
+//		return subClassService.fetchSubClassTable();
+//	}
 	@GetMapping("/getAllSubClassById/{subClassId}")
 	public ResponseEntity<SubClassification> getSubClassificationById(@PathVariable("subClassId") String subClassId){
 		return new ResponseEntity<SubClassification>(subClassService.getSubClassificationById(subClassId), HttpStatus.OK);

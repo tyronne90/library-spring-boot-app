@@ -19,13 +19,13 @@ import com.sgic.library.entities.MainClassification;
 import com.sgic.library.services.MainClassificationService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:300")
+@CrossOrigin(origins = "http://localhost:3000")
 public class MainClassificationController {
 
 	@Autowired
 	MainClassificationService mainClassService;
 	
-	  //@CrossOrigin(origins = "http://localhost:300")
+	  //@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/saveMainClass")
 	public HttpStatus saveMainClass(@Valid @RequestBody MainClassification mainClass) {
 		mainClassService.saveMainClassification(mainClass);;

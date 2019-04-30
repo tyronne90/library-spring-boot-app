@@ -14,15 +14,14 @@ public interface SubClassificationRepository extends JpaRepository<SubClassifica
 	String findSubClassName = "SELECT sub_Class_Name from subclassification";
 	@Query(value = findSubClassName, nativeQuery=true)
 	Object[] findSubClassName();
-	
-//	String findSubClassId = "SELECT sub_Class_Id from subclassification";
-//	@Query(value = findSubClassId, nativeQuery=true)
-//	Object[] findSubClassId();
-	
+		
 	String fetchSubClassNameByMainClassId = "SELECT sub_Class_Name from subclassification WHERE main_Class_Id=?1";
 	@Query(value = fetchSubClassNameByMainClassId, nativeQuery=true)
 	Object[] fetchSubClassNameByMainClassId(Long mainClassId);
 	
-	
+//	String fetchSubClassTable = "SELECT * FROM subclassification s LEFT JOIN mainclassification m ON s.main_class_id = m.main_class_id;";
+//	@Query(value = fetchSubClassTable, nativeQuery=true)
+//	List<SubClassification> fetchSubClassTable();
+//	
 
 }
