@@ -14,5 +14,5 @@ public interface SubClassificationService {
 	Object[] getSubClassNameByMainClassId(Long mainClassId); 					// fetch SubClassification Name By using MainClassification Id
 	void updateSubClassification(SubClassification subClass);
 	SubClassification deleteSubClassById(String subClassId);
-//	List<SubClassification> fetchSubClassTable();
+	List<SubClassification> fetchOneSubClassTable(String subClassId);
 }

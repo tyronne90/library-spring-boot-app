@@ -12,15 +12,19 @@ import com.sgic.library.repository.BookRepository;
 public class BookServiceImpl implements BookService{
 	@Autowired
 	BookRepository bookRepository;
-
+	@Override
 	public void saveBook(Book book) {
 		bookRepository.save(book);
 	}
-	
+	@Override
 	public List<Book> getAllBook(){
 		return bookRepository.findAll();
 	}
 	
+	@Override
+	public List<Book> fetchBookTable() {
+		return bookRepository.fetchBookTable();
+	}
 	@Override
 	public Book getBookById(String id){
 		return bookRepository.findBookById(id);
@@ -55,6 +59,8 @@ public class BookServiceImpl implements BookService{
 	public List<Book> getBookByBookName(String bookName) {
 		return bookRepository.findBookByBookName(bookName);
 	}
+
+	
 	
 	
 }

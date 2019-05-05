@@ -64,9 +64,9 @@ public class SubClassificationImpl implements SubClassificationService {
 		return null;
 	}
 
-//	@Override
-//	public List<SubClassification> fetchSubClassTable() {
-//		return subClassificationRepository.fetchSubClassTable();
-//	}
+	@Override
+	public List<SubClassification> fetchOneSubClassTable(String subClassId) {
+		return subClassificationRepository.fetchOneSubClassTable(subClassId);
+	}
 
 }

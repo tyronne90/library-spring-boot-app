@@ -26,42 +26,55 @@ public class SubClassificationController {
 	@Autowired
 	SubClassificationService subClassService;
 	
+//	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/saveSubClass")
 	public HttpStatus saveSubClass(@Valid @RequestBody SubClassification subClass) {
 		subClassService.saveSubClassification(subClass);
 		return HttpStatus.CREATED;
 	}
+	
+//	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/getAllSubClass")
 	public List<SubClassification> getAllSubClass() {
 		return subClassService.getAllSubClass();
 	}
-//	@GetMapping("/getAllSubClassTable")
-//	public List<SubClassification> getAllSubClassTable() {
-//		return subClassService.fetchSubClassTable();
-//	}
+	
+//	@CrossOrigin(origins = "http://localhost:3000")
+	@GetMapping("/getOneSubClassTable/{subClassId}")
+	public List<SubClassification> fetchOneSubClassTable(@PathVariable("subClassId") String subClassId) {
+		return subClassService.fetchOneSubClassTable(subClassId);
+	}
+	
+//	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/getAllSubClassById/{subClassId}")
 	public ResponseEntity<SubClassification> getSubClassificationById(@PathVariable("subClassId") String subClassId){
 		return new ResponseEntity<SubClassification>(subClassService.getSubClassificationById(subClassId), HttpStatus.OK);
 	}
+	
+//	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/getAllSubClassByMainClassId/{mainClassId}")
 	public List<SubClassification> getSubClassificationByMainClassId(@PathVariable("mainClassId") Long mainClassId){
 		return subClassService.getSubClassificationByMainClassId(mainClassId);
 	}
+	
 	@GetMapping("/getAllSubClassName")
 	public Object[] getSubClassName(){
 		 Object[] subName = subClassService.getSubClassName();
 		 return subName;
 	}
+	
 	@GetMapping("/getAllSubClassNameByMainClassId/{mainClassId}")
 	public Object[] getSubClassNameByMainClassId(@PathVariable("mainClassId") Long mainClassId){
 		 Object[] subClassName = subClassService.getSubClassNameByMainClassId(mainClassId);
 		 return subClassName;
 	}
+	
 	@PutMapping("/updateSubClassification")
 	public ResponseEntity<SubClassification> updateBook(@Valid @RequestBody SubClassification subClass) {
 		subClassService.updateSubClassification(subClass);
 		return new ResponseEntity<SubClassification>(subClass, HttpStatus.OK);
 	}
+	
 	@DeleteMapping("/deleteSubClassById/{subClassId}")
 	public ResponseEntity<SubClassification> deleteSubClassificationById(@PathVariable("subClassId") String subClassId){
 		return new ResponseEntity<SubClassification>(subClassService.deleteSubClassById(subClassId), HttpStatus.OK);

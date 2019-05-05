@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @SuppressWarnings("serial")
 @Entity
@@ -21,7 +21,7 @@ public class Book implements Serializable{
  
  @OneToOne
 	@JoinColumn(name="mainClassId", nullable=false)
- @JsonBackReference
+// @JsonBackReference
 	MainClassification mainClassification;
 
  @OneToOne

@@ -19,9 +19,9 @@ public interface SubClassificationRepository extends JpaRepository<SubClassifica
 	@Query(value = fetchSubClassNameByMainClassId, nativeQuery=true)
 	Object[] fetchSubClassNameByMainClassId(Long mainClassId);
 	
-//	String fetchSubClassTable = "SELECT * FROM subclassification s LEFT JOIN mainclassification m ON s.main_class_id = m.main_class_id;";
-//	@Query(value = fetchSubClassTable, nativeQuery=true)
-//	List<SubClassification> fetchSubClassTable();
-//	
+	String fetchOneSubClassTable = "SELECT s.sub_Class_Id, s.sub_Class_Name, s.main_Class_Id, m.main_Class_Name FROM subclassification s LEFT JOIN mainclassification m ON s.main_Class_Id = m.main_Class_Id WHERE sub_Class_Id=?1";
+	@Query(value = fetchOneSubClassTable, nativeQuery=true)
+	List<SubClassification> fetchOneSubClassTable(String subClassId);
+	
 
 }

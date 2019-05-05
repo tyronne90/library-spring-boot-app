@@ -13,4 +13,5 @@ public interface BookService {
 	List<Book> getBookByMainClassId(Long mainClassId);
 	List<Book> getBookBySubClassId(String subClassId);
 	List<Book> getBookByBookName(String bookName);
+	List<Book> fetchBookTable();
 }
